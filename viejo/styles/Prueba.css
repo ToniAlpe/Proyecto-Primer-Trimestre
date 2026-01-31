@@ -1,0 +1,56 @@
+/* 
+------------------------------------
+        index.HTML (carpeta viejo)
+         Pagina web antigua
+------------------------------------
+*/
+#cabecera{
+    width:  100%;
+    height:  600px;
+    background-size: cover;
+    background-position: bottom;
+    background-image: url("../assets/cabecera.jpeg");
+}
+
+#titulo{
+    text-decoration: underline;
+}
+
+
+#cabecera h1{
+    text-align: center;
+    top: 500px;
+    position: relative;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#indice{
+   background-color: rgb(182, 180, 180); 
+   width: 400px;
+   border-radius: 8px;
+}
+#indice a{
+    text-decoration: none;
+    color: black;
+}
+#indice a:hover{
+        color: blue;
+        text-decoration: underline;
+        text-transform: capitalize;
+        font-size:x-large;
+}
+a{
+   text-decoration: none;
+    color: black; 
+}
+a:hover{
+        color: blue;
+        text-decoration: underline;
+        text-transform: capitalize;
+        font-size:x-large;
+}
+
+#Consolas_revolucion{
+    background-color: rgb(182, 180, 180);
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla comparativa</title>
+    <!--CSS enlazado-->
+    <link rel="stylesheet" href="../styles/styles.css">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../viejo/Index.html" target="_blank">
+            <img id="logo" src="../assets/Logo.png" alt="Hubo un error al cargar">
+        </a>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="Historia.html">Historia y evolución consolas</a>
+            <!--Menú desplegable de "consolas"-->
+            <ul class="menu">
+                <li><a href="">Consolas <img id="flecha" src="../assets/flecha-hacia-abajo.png" alt="Hubo un error al ccargar"></a>
+                    <ul>
+                        <li><a href="PaginasWeb.html">Paginas web</a></li>
+                        <li><a href="Tabla.html">Tabla comparación</a></li>
+                        <li><a href="PS5.html">PS5</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="Formulario.html">Formulario</a>
+        </nav>
+    </header>
+
+    <div class="contenedor-imagenTabla"> <!--Contenedor padre de l imagen de abajo-->
+        <img src="../assets/VS.png" alt="Hubo un error al cargar">
+    </div>
+
+    <!--Contenedor padre-->
+    <div class="contenedor-tabla"> 
+        <div id="tabla"> <!--Contenedor hijo pero padre de lo que tiene dentro-->
+            <h2>Comparativa: Consolas antiguas vs Consolas modernas</h2>
+            <br>
+            <table border="1" cellspacing="0" cellpadding="10"> <!--Inicio tabla-->
+                <thead>
+                    <tr> <!--Table row (linea de la tabla)-->
+                        <th rowspan="2">Característica</th> <!--Table header (encabezado de la tabla) (negrita)-->
+                        <!--Junta filas-->
+                        <!--Junta columnas-->
+                        <th colspan="2">Consolas antiguas</th>
+                        <th colspan="2">Consolas modernas</th>
+                    </tr>
+                    <tr>
+                        <th>Ejemplo</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Gráficos</td> <!--Table data (dato de la tabla)-->
+                        <td>Magnavox Odyssey</td>
+                        <td>Blanco y negro, muy simples</td>
+                        <td>PS5 / Xbox Series X</td>
+                        <td>4K/8K, ray tracing, gráficos realistas</td>
+                    </tr>
+                    <tr>
+                        <td>Procesador</td>
+                        <td>Atari 2600</td>
+                        <td>CPU limitado, sin GPU dedicada</td>
+                        <td>PS5 / Xbox Series X</td>
+                        <td>CPU y GPU potentes, optimizados para juegos</td>
+                    </tr>
+                    <tr>
+                        <td>Almacenamiento</td>
+                        <td>NES / SNES</td>
+                        <td>Cartuchos pequeños, sin memoria interna</td>
+                        <td>PS5 / Nintendo Switch</td>
+                        <td>Discos, SSD, almacenamiento digital y en la nube</td>
+                    </tr>
+                    <tr>
+                        <td>Controles</td>
+                        <td>Magnavox Odyssey</td>
+                        <td>Mandos simples, pocos botones</td>
+                        <td>Wii / PS5 DualSense</td>
+                        <td>Mandos ergonómicos, sensores de movimiento, retroalimentación háptica</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Conectividad</td>
+                        <td>Atari 2600</td>
+                        <td>Sin conexión a internet</td>
+                        <td>Xbox One / PS5</td>
+                        <td>Juego en línea, descargas y streaming</td>
+                    </tr>
+                    <tr>
+                        <td>NES / SNES</td>
+                        <td>Solo juegos locales</td>
+                        <td>Nintendo Switch</td>
+                        <td>Híbrida, online, eShop digital</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="5" style="text-align:center;">Nota: Las consolas modernas ofrecen mayor potencia, conectividad y versatilidad que las consolas antiguas.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <!--El footer de la página-->
+    <div id="footer">
+        <h6>
+            <p>Autor: Antonio Almgaro Pérez</p>
+            <p>Email: tonialpe.dev@gmail.com</p>
+        </h6>
+    </div>
+   
+</body>
+</html>

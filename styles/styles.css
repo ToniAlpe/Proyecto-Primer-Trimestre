@@ -1,0 +1,774 @@
+/*Universal*/
+* {
+    padding: 0;
+    margin: 0;
+    /*Objeto ocupa el espacio que realmente necesita*/
+    box-sizing: border-box; /*Evita que los objetos se desborden*/
+    /*font-family: 'system-ui';*/
+    font-family: "Noto Sans", sans-serif; /*Google fonts*/
+}
+
+body {
+    background-color: rgb(53, 51, 51);
+}
+
+header {
+    background-color:white;
+    /*Me permite organizar objetos de forma vertical y horizonatl*/
+    display: flex; /*Alinear y distribuir de forma eficiente*/
+    justify-content: space-around; /*Espacio entre para que no este todo junto*/
+    /*Me permite poner el logo a la izquierda y los enlaces a la derecha*/
+    align-items: center; /*Los alineo para que esten centrados*/
+    /*Para que haya espacio*/
+    padding: 15px;
+}
+
+/* 
+------------------------------------
+         Barra de navegación
+------------------------------------
+*/
+nav {
+    display: flex;
+    /*Me permite hacer un "hueco" entre los enlaces (en este caso)*/
+    gap: 20px;
+}
+
+nav  a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Selecciona solo a los enlaces que son hijos del nav*/
+/*Excluye el ul con id menu*/
+nav > a:hover {
+    /*Hace esto cuando el mouse está encima de los enlaces*/
+    color: blue;
+    font-size:large;
+}
+
+/* 
+------------------------------------
+            móvil
+    (solo la barra de navegación)
+------------------------------------
+*/
+
+/*Visto de un video sirve para ajustar la pagina web a dispositivos moviles*/
+/*Cuando el ancho de la pantalla sea de 430px o menor, aplica esto:*/
+/*Logo centrado y los enlaces justo debajo de este y centrados*/
+/*@media (max-width: 430px) {
+    header, nav {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 15px;
+        align-items: center;
+    }
+}*/
+
+/* 
+------------------------------------
+        MENÚ DESPLEGABLE (con su flecha)
+        Logo
+        footer (se repite en todas las paginas)
+        [Para todas las paginas]
+------------------------------------
+*/
+
+/*Parametros para el ancho y la altura del logo*/
+#logo {
+    width:  70px;
+    height:  auto;
+}
+
+
+/*Apoyandome de un video (NO COPIADO)*/
+/*Estilos para cada elemento li del menú desplegable (CONSOLA)*/
+.menu li {
+    position: relative; /*Permite que los submenús se posicionen respecto al li */
+    display: inline-block; /*Posiciona los li de manera horizontal*/
+    /*Quita los puntos de enumeración (los hace invisibles)*/
+}
+
+/*Muestra el submenú cuando el ratón pasa por encima*/
+.menu li:hover ul {
+    display: block;/*Hace visible el submenú*/
+}
+
+/*Estilos del submenú (oculto al inicio)*/
+.menu ul {
+    display: none; /*Oculta los submenús cuando no están activos*/
+    position: absolute; /*Lo posiciona respecto al li (por lo que tengo entendido este no se mueve)*/
+    /*Lo he probado en relative y es como si moviera el encabezado (MUY RARO)*/
+    top: 100%;
+    left: 0;
+    background-color: grey;
+    width: 165px; /*El espacio que ocupa la caja gris de los elementos li*/
+}
+
+/*Estilos de los enlaces dentro del submenú*/
+.menu ul li a {
+    display: block; /*Hace que todo el área del enlace sea clicable*/
+    /*Y que sean bloques literalmente*/
+    padding: 10px; /*Añade espacio interno al enlace*/
+    text-decoration: none;
+    color:white; /*Color del texto*/
+}
+
+/*Efecto al pasar el ratón sobre los enlaces del submenú*/
+.menu ul li a:hover {
+    background-color:rgb(175, 198, 242); /*Cambia el fondo "caja"*/
+    width: 165px; /*Para que la caja azul se seleccione hasta el final*//*118 para más pequeño*/
+    /*Tiene que ser el mismo width que el de menu ul*/
+}
+
+/*Estilos generales para todos los enlaces del menú (CONSOLA)*/
+.menu li a {
+    text-decoration: none; /*Elimina subrayado*/
+    padding: 10px; /*Espacio interno a los enlaces*/
+}
+
+/*Imagen felcha (al lado de CONSOLAS)*/
+/*Para saber al usuario que es un menu desplegable*/
+#flecha {
+    width:  10px;
+    height:  auto;
+}
+
+/*Estilo para el footer (pie de pagina)*/
+#footer {
+    background-color: grey; /* Color de fondo*/
+    color: white; /* Color del texto*/
+    text-align: center; /* Centrar el texto*/
+    padding: 20px; /* Espacio interno*/
+    margin-top: 40px; /* Separación respecto al contenido*/
+}
+
+/* 
+------------------------------------
+          Formulario.HTML
+            FORMULARIO
+------------------------------------
+*/
+
+/* Contenedor Principal (formulario)*/
+/*Ayuda IA, he tenido que poner un contenedor para decir que hay dos elementos, uno a la izquierda y otro a la derecha*/
+/*No sabia que habia que poner un contenedor que contenga la imagen (Por eso no me salia)*/
+/*Lo he probado con el float y no me salia*/
+.contenedor-principal {
+    display: flex; /* Me permite poner las cosas al lado de otro */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centra el contenedor en la página */
+}
+
+/* Estilos para el Formulario (Izquierda) */
+#Formulario {
+    /*Aqui no le pongo un display flex porque se me mueven las cosas dentro del formulario*/ 
+    min-width: 500px; /* Asegura un ancho mínimo para que sea legible */
+    padding: 30px;
+    background-color: grey; /* Color de fondo del formulario */
+    color: black;
+}
+
+#Formulario h2 {
+    color:rgb(77, 184, 255);
+}
+
+/* Estilos para la Imagen (Derecha) */
+.contenedor-imagen {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-imagen img {
+    max-width: 100%; /* La imagen no se desborda */
+    height: auto;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 
+------------------------------------
+            PaginasWeb.HTML
+            Marcas consolas
+------------------------------------
+*/
+.marcas {
+    padding: 50px; /*Me permite meterle relleno de colro blanco y así da un efecto como que está metido de otra caja*/
+    border-radius: 8px; /*El radio del borde*/
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /*Sombra borde*/
+    margin: 80px;
+}
+
+.marcas h2 {
+    background-color: grey; /* Color de fondo*/
+    color: white; /* Color del texto*/
+    text-align: center; /* Centrar el texto*/
+    padding: 20px; /* Espacio interno*/
+    margin-top: 40px; /* Separación respecto al contenido*/
+}
+
+.marcas h3 {
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#sony {
+    padding: 30px; /*Cajita negra que pone información*/
+    border-radius: 8px;
+    background-color: rgb(53, 51, 51);
+    margin: 10px;
+    color: white;
+}
+
+#xbox {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: rgb(53, 51, 51);
+    margin: 10px;
+    color: white;
+}
+
+#nintendo {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: rgb(53, 51, 51);
+    margin: 10px;
+    color: white;
+}
+
+/* 
+------------------------------------
+            PS5.HTML
+        Pagina sobre la ps5
+------------------------------------
+*/
+/*Aquí he reutilizado el codigo del contenedor de formulario (se puede hacer eso?)*/
+.contenedorPS5 {
+    display: flex; /* Me permite poner las cosas al lado de otro */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centra el contenedor en la página */
+}
+
+/* Estilos para el texto descriptivo de la ps5 (Izquierda) */
+#PS5 {
+    /* Toma una parte del espacio total */ 
+    min-width: 500px; /* Asegura un ancho mínimo para que sea legible */
+    padding: 30px;
+    background-color: grey; /* Color de fondo del formulario */
+    color: black;
+    border: 5px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#PS5 ul li {
+    list-style: none;
+}
+
+#PS5 h1 {
+  color:rgb(77, 184, 255);  
+}
+
+#PS5 h2 {
+    color: lightskyblue;
+}
+
+/* Estilos para la Imagen (Derecha) */
+.contenedor-imgPS5 {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-imgPS5 img {
+    max-width: 100%; /* La imagen no se desborda */
+    height: auto;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/*.generaciones {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 20px;
+    border: 5px solid white;
+}*/
+/*Por si acaso quieres englobar todas las generaciones en un mismo bloque*/
+
+/* 
+------------------------------------
+            Historia.HTML
+               Índice
+        Generaciones de las consolas
+------------------------------------
+*/
+.indice{
+   background-color: rgb(182, 180, 180);
+   width: 400px;
+   border-radius: 8px;
+   text-align: center;
+   margin: 0 auto;
+   border: 5px solid white;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.indice li {
+    list-style: none; /*Me quita los puntos de la lista*/
+}
+
+.indice a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize; /*Poner la primera letra en mayuscula*/
+}
+.indice a:hover{
+    display: block; /*Hace como una especie de cuadrado que luego lo relleno de azul claro*/
+    background-color:rgb(175, 198, 242);
+    font-size: large;
+}
+
+#indice-titulo {
+   width: 400px;
+   border-radius: 8px;
+   text-align: center;
+   color:rgb(77, 184, 255);
+   margin:0 auto; /*Lo centra sin usar el display flex (ayuda IA)*/
+
+}
+
+#indice-subtitulo {
+    text-align: center;
+    color: lightskyblue;
+}
+.contenedor-imagenHistoria {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-imagenHistoria img {
+    height: auto;
+    width: 700px;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#generacion1 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px; /*Relleno interior (deja un espacio en el interior)*/
+    border: 5px solid white;
+}
+
+#generacion1 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#generacion1 img {
+    float: right;
+    width: 15%;
+    height: auto;
+}
+
+#contenedor-gen1 {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#contenedor-gen1 img {
+    height: auto;
+    width: 25%;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#generacion2 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion2 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#generacion2 img {
+    padding: 20px; /*Separación entre las tres imagenes*/
+    width: 20%;
+    height: auto;
+}
+
+#generacion2-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+#generacion2-row img {
+    width: 25%;
+    height: auto;
+}
+
+#generacion3 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion3 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#generacion3 img {
+    float: right;
+    padding: 20px; /*Separación entre las tres imagenes*/
+    width: 20%;
+    height: auto;
+}
+
+#generacion3-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+#generacion3-row img {
+    width: 25%;
+    height: auto;
+}
+#generacion4 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px; /*Espacio entre el borde de la pagina y el texto*/
+    border: 5px solid white;
+}
+
+#generacion4 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#generacion4-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+#generacion4-row img {
+    padding: 20px;
+    width: 25%;
+    height: auto;
+}
+
+#generacion5 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion5 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#generacion5 img {
+    float: left;
+    padding: 40px;
+    width: 20%;
+    height: auto;
+}
+
+#generacion5-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+#generacion5-row img {
+    width: 25%;
+    height: auto;
+}
+
+#generacion6 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion6 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#contenedor-gen6 {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#contenedor-gen6 img {
+    height: auto;
+    width: 25%;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#generacion7 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion7 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#generacion7 img {
+    float: right;
+    padding: 20px; /*Separación entre las tres imagenes*/
+    width: 20%;
+    height: auto;
+}
+
+#generacion7-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+#generacion7-row img {
+    width: 25%;
+    height: auto;
+}
+
+#generacion8 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion8 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#contenedor-gen8 {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#contenedor-gen8 img {
+    height: auto;
+    width: 25%;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#generacion9 {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#generacion9 h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#contenedor-gen9 {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#contenedor-gen9 img {
+    height: auto;
+    width: 25%;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+------------------------------------
+            Tabla.HTML
+         Tabla comparativa
+------------------------------------
+*/
+.contenedor-tabla {
+    display: flex; /* Me permite poner las cosas al lado de otro */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centra el contenedor en la página */
+}
+
+/* Estilos para el texto descriptivo de la ps5 (Izquierda) */
+#tabla {
+    /* Toma una parte del espacio total */ 
+    min-width: 500px; /* Asegura un ancho mínimo para que sea legible */
+    padding: 30px;
+    background-color: rgb(182, 180, 180); /* Color de fondo del formulario */
+    border: 5px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: black;
+    text-align: center;
+}
+
+#tabla h2 {
+    text-align: center;
+    color: rgb(77, 184, 255);
+}
+
+.contenedor-imagenTabla {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-imagenTabla img {
+    height: auto;
+    width: 35%;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+------------------------------------
+            index.HTML
+        Inicio de la pagina web
+------------------------------------
+*/
+.contenedor-inicio1 {
+    display: flex;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centra el contenedor en la página */
+}
+
+#sobre-mi {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#sobre-mi h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#sobre-mi img {
+    float: right;
+    width: 30%;
+    height: auto;
+    border-radius: 100%;
+}
+
+#contenedorimg-inicio {
+    display: flex; /* Usa flex para centrar la imagen dentro de su contenedor */
+    justify-content:center;
+    padding: 20px;
+}
+
+#contenedorimg-inicio img {
+    width: 50%;
+    height: auto;
+    /* Estilos opcionales para la imagen */
+    border: 5px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-inicio2 {
+    display: flex;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centra el contenedor en la página */
+}
+
+#importancia-consolas {
+    background-color: rgb(182, 180, 180);
+    width: 100%;
+    border-radius: 8px;
+    color:black;
+    padding: 30px;
+    border: 5px solid white;
+}
+
+#importancia-consolas h2 {
+    color: rgb(77, 184, 255);
+    text-align: center;
+}
+
+#importancia-consolas img {
+    float: right;
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+}

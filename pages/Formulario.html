@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!--CSS enlazado-->
+    <link rel="stylesheet" href="../styles/styles.css">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../viejo/Index.html" target="_blank">
+            <img id="logo" src="../assets/Logo.png" alt="Hubo un error al cargar">
+        </a>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="Historia.html">Historia y evolución consolas</a>
+            <!--Menú desplegable de "consolas"-->
+            <ul class="menu">
+                <li><a href="">Consolas <img id="flecha" src="../assets/flecha-hacia-abajo.png" alt="Hubo un error al ccargar"></a>
+                    <ul>
+                        <li><a href="PaginasWeb.html">Paginas web</a></li>
+                        <li><a href="Tabla.html">Tabla comparación</a></li>
+                        <li><a href="PS5.html">PS5</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="Formulario.html">Formulario</a>
+        </nav>
+    </header>
+
+    <br> <!--Salto de linea-->
+    <!--Contenedor padre-->
+    <div class="contenedor-principal"> 
+        <div id="Formulario"> <!--Contenedor hijo-->
+            <h2>Preferencias de los usuarios sobre consolas</h2><br>
+            <form> <!--Inicio etiqeuta formulario-->
+                <label for="username">Nombre de usuario:</label><br>
+                <input type="text" id="username" name="username" placeholder="Escribe tu nombre" required minlength="3" maxlength="20"><br><br>
+
+                <label for="password">Contraseña:</label><br> <!--Campo para contraseña-->
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required minlength="6"><br><br> <!--Tipo de campo-->
+
+                <label for="video">Sube un video de tu consola favorita:</label><br>
+                <input type="file" id="video" name="video" accept="video/*" required><br><br>
+
+                <label for="consola">Selecciona tu consola preferida:</label><br>
+                <select id="consola" name="consola" required> <!--Inicio seleccionador-->
+                    <option value="" disabled selected>--Elige una consola--</option> <!--Es la predeterminada pero con un efecto de transparencia-->
+                    <option value="ps5">PlayStation 5</option> <!--Opciones del seleccionador-->
+                    <option value="xbox">Xbox Series X/S</option>
+                    <option value="switch">Nintendo Switch</option>
+                    <option value="retro">Consola retro</option>
+                </select><br><br> <!--Final de seleccionador-->
+
+                <input type="checkbox" id="accept" name="accept" value="accepted" required>
+                <label for="accept">Acepto que mis datos serán utilizados para encuestas de videojuegos</label><br><br>
+
+                <p>Tipo de jugador:</p>
+                <input type="radio" id="casual" name="tipo" value="casual"> <!--Solo te deja elegir 1 opción-->
+                <label for="casual">Casual</label><br>
+                <input type="radio" id="hardcore" name="tipo" value="hardcore">
+                <label for="hardcore">Hardcore</label><br>
+                <input type="radio" id="competitivo" name="tipo" value="competitivo">
+                <label for="competitivo">Competitivo</label><br><br>
+
+                <label for="comentarios">Comentarios o sugerencias:</label><br> <!--Una caja para escribir lo que quieras-->
+                <textarea id="comentarios" name="comentarios" placeholder="Escribe tus comentarios aquí..." cols="50" rows="5"></textarea><br><br>
+
+                <button type="submit">Enviar formulario</button> <!--Boton para enviar el formulario-->
+
+            </form> <!--Final del formulario-->
+        </div>
+        
+        <div class="contenedor-imagen"> <!--Contenedor hijo pero padre de la imagen de abajo-->
+            <img src="../assets/formulario.png" alt="Evolución de consolas">
+        </div>
+        
+    </div>
+
+    <!--El footer de la página-->
+    <div id="footer">
+        <h6>
+            <p>Autor: Antonio Almgaro Pérez</p>
+            <p>Email: tonialpe.dev@gmail.com</p>
+        </h6>
+    </div>
+   
+</body>
+</html>
